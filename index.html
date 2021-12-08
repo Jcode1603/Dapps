@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Hello test dapp</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js">
+    </script>
+</head>
+<body>
+    <h1 id="blockNumber">
+    </h1>
+    <script type="text/javascript">
+        const NODE_URL="https://speedy-nodes-nyc.moralis.io/602e36bbf11fe323df1cffe7/bsc/mainnet";
+        //defines the node to be used in communicating with the blockchain
+        let web3 = new Web3(new Web3.providers.HttpProvider(NODE_URL))
+
+        web3.eth.getBlockNumber()
+        .then(function(blockNumber){
+            document.getElementById("blockNumber").innerHTML = "Block number: " + blockNumber;
+        })
+    </script>
+    <button onclick="EnableETH()">Connect wallet</button>
+</body>
+</html>l>
